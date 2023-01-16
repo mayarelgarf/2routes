@@ -11,6 +11,7 @@ class AdminController extends Controller
         return view('layout.admin');
     }
     function categories(){
-        return view('layout.categories');
+        $categories = category::all();
+        return view('layout.categories')->with('categories',$categories);
     }
 }
